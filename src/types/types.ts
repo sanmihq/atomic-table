@@ -1,0 +1,30 @@
+export interface Element {
+  id: number;
+  name: string;
+  symbol: string;
+  atomic_mass: number;
+  standard_state: string;
+  electron_configuration: string;
+  oxidation_state: string;
+  electronegativity: number | null;
+  atomic_radius: number;
+  ionization_energy: number;
+  electron_affinity: number;
+  melting_point: number | null;
+  boiling_point: number | null;
+  density: number | null;
+  year_discovered: number | string;
+  person_discovered: string;
+  latin_name: string;
+  english_name: string;
+  electron: number;
+  proton: number;
+  neutron: number;
+  valence_electron: number;
+  period: number;
+  group: number | null;
+  block: string;
+  col_position: number;
+  row_position: number;
+  category: string;
+}
