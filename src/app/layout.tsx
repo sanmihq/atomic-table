@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-atomic">
       <body className={`${poppins.className} max-w-[100rem] mx-auto`}>
         {children}
       </body>
