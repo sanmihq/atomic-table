@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Lexend, Poppins } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const lexend = Lexend({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
@@ -22,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="bg-atomic">
-      <body className={`${poppins.className} max-w-[100rem] mx-auto`}>
+      <body className={`${lexend.className} max-w-[100rem] mx-auto`}>
         {children}
       </body>
     </html>
