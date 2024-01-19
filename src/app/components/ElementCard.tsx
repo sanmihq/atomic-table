@@ -50,9 +50,13 @@ export default function ElementCard({ element }: ElementCardProps) {
     ? "#000000"
     : getColorByCategory(element.category);
 
-  const kelvinToCelsius = (kelvin: number | null) => kelvin - 273.15;
-  const kelvinToFahrenheit = (kelvin: number | null) =>
-    (kelvin - 273.15) * (9 / 5) + 32;
+  const kelvinToCelsius = (kelvin: number | null | undefined) => {
+    return kelvin != null ? kelvin - 273.15 : null;
+  };
+
+  const kelvinToFahrenheit = (kelvin: number | null | undefined) => {
+    return kelvin != null ? (kelvin - 273.15) * (9 / 5) + 32 : null;
+  };
 
   const meltingPointCelsius = kelvinToCelsius(element.melting_point);
   const boilingPointCelsius = kelvinToCelsius(element.boiling_point);
@@ -206,17 +210,25 @@ export default function ElementCard({ element }: ElementCardProps) {
                   <p className="font-semibold">
                     Melting Point: <br />
                     <span className="font-light">
-                      {element.melting_point}°K |{" "}
-                      {meltingPointCelsius.toFixed(4)}°C |{" "}
-                      {meltingPointFahrenheit.toFixed(4)}°F
+                      {element.melting_point != null
+                        ? `${
+                            element.melting_point
+                          }°K | ${meltingPointCelsius?.toFixed(
+                            4
+                          )}°C | ${meltingPointFahrenheit?.toFixed(4)}°F`
+                        : "N/A"}
                     </span>
                   </p>
                   <p className="font-semibold">
                     Boiling Point: <br />
                     <span className="font-light">
-                      {element.boiling_point}°K |{" "}
-                      {boilingPointCelsius.toFixed(4)}°C |{" "}
-                      {boilingPointFahrenheit.toFixed(4)}°F
+                      {element.boiling_point != null
+                        ? `${
+                            element.boiling_point
+                          }°K | ${boilingPointCelsius?.toFixed(
+                            4
+                          )}°C | ${boilingPointFahrenheit?.toFixed(4)}°F`
+                        : "N/A"}
                     </span>
                   </p>
                   <p className="font-semibold">
