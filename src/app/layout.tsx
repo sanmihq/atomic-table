@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Lexend, Poppins } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import ScreenMessage from "./components/ScreenMessage";
 
 const lexend = Lexend({
   subsets: ["latin"],
@@ -29,7 +30,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-atomic">
       <body className={`${lexend.className} max-w-[100rem] mx-auto`}>
-        {children}
+        <div className="lg:hidden">
+          <ScreenMessage />
+        </div>
+        <div className="hidden lg:block">{children}</div>
         <SpeedInsights />
       </body>
     </html>
