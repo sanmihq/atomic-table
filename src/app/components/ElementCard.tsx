@@ -66,14 +66,14 @@ export default function ElementCard({ element }: ElementCardProps) {
   return (
     <div>
       <Sheet>
-        <SheetTrigger>
+        <SheetTrigger className="block">
           <div
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             style={{ backgroundColor, color: textColor }}
-            className={`flex flex-col gap-1 items-center justify-center min-w-[70px] h-fit p-1 cursor-pointer`}
+            className={`flex flex-col gap-1 items-center justify-center min-w-[65px] h-fit p-1 cursor-pointer`}
           >
-            <div className="flex items-center justify-between text-[.6rem] font-semibold w-full leading-none">
+            <div className="flex items-center justify-between text-[.5rem] font-semibold w-full leading-none">
               <span>{element.electron}</span>
               <span>{element.atomic_mass}</span>
             </div>
